@@ -10,12 +10,9 @@ Steps:
 
 3. Merges the training and the test sets to create one data set. For this, we store as a dataframe each of the X,Y and train, test files:
 
-       train_x <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/train//X_train.txt", sep="", header=FALSE)
-	    
+           train_x <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/train//X_train.txt", sep="", header=FALSE)   
 	   test_x  <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/test//X_test.txt"  , sep="", header=FALSE)
-
 	   train_y <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/train//y_train.txt", sep="", header=FALSE)
-	    
 	   test_y  <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/test//y_test.txt"  , sep="", header=FALSE)
 
 In each of them there are 7352 observables: 
