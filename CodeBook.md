@@ -4,16 +4,16 @@ Steps:
 
 1. Download the zip file with all the txt files and unzip it under the folder "Curso-CleaningData-Coursera"
 
-2. Set the working directory to the unziped folder with the data
-
-	   setwd("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/")
+2. Set the working directory to the unziped folder with the data:
+    
+        setwd("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/")
 
 3. Merges the training and the test sets to create one data set. For this, we store as a dataframe each of the X,Y and train, test files:
 
-           train_x <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/train//X_train.txt", sep="", header=FALSE)   
-	   test_x  <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/test//X_test.txt"  , sep="", header=FALSE)
-	   train_y <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/train//y_train.txt", sep="", header=FALSE)
-	   test_y  <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/test//y_test.txt"  , sep="", header=FALSE)
+        train_x <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/train//X_train.txt", sep="", header=FALSE)
+        test_x  <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/test//X_test.txt"  , sep="", header=FALSE)
+	    train_y <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/train//y_train.txt", sep="", header=FALSE)
+        test_y  <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/test//y_test.txt"  , sep="", header=FALSE)
 
 In each of them there are 7352 observables: 
 - for the 'X' files, there are 561 variables, defined in the txt file features.txt
@@ -66,9 +66,9 @@ Second, replace the number in the Activity column from 'my_dataset' to the corre
 
 6. From this data set, creates a table, independent tidy data set with the average of each variable for each activity and each subject.
 
-       setwd("/home/jorda/Escritorio/Curso-CleaningData-Coursera/GetAndCleanData_Project/")
+        setwd("/home/jorda/Escritorio/Curso-CleaningData-Coursera/GetAndCleanData_Project/")
     
-       clean_dataset <- aggregate(data=my_dataset, .~Activity, FUN=mean)
+        clean_dataset <- aggregate(data=my_dataset, .~Activity, FUN=mean)
     
-       write.table(clean_dataset, row.names=FALSE,file="Project_output.txt")
+        write.table(clean_dataset, row.names=FALSE,file="Project_output.txt")
 
