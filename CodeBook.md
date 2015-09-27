@@ -2,13 +2,13 @@
 
 Steps:
 
-1. Download the zip file with all the txt files and unzip it under the folder "Curso-CleaningData-Coursera"
+* Download the zip file with all the txt files and unzip it under the folder "Curso-CleaningData-Coursera"
 
-2. Set the working directory to the unziped folder with the data:
+* Set the working directory to the unziped folder with the data:
     
         setwd("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/")
 
-3. Merges the training and the test sets to create one data set. For this, we store as a dataframe each of the X,Y and train, test files:
+* Merges the training and the test sets to create one data set. For this, we store as a dataframe each of the X,Y and train, test files:
 
         train_x <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/train//X_train.txt", sep="", header=FALSE)
         test_x  <- read.table("/home/jorda/Escritorio/Curso-CleaningData-Coursera/UCI HAR Dataset/test//X_test.txt"  , sep="", header=FALSE)
@@ -28,7 +28,7 @@ Now that both datasets have the same format, we can merge the Train and Test
 
     total <- rbind(total_train, total_test)
 
-4. Extracts only the measurements on the mean and standard deviation for each measurement. 
+* Extracts only the measurements on the mean and standard deviation for each measurement. 
 
 The file features.txt describes each variable. From there, we know that the mean and standard deviation for each measurement are the variables number 
 We read the variables names from the txt: 
@@ -48,7 +48,7 @@ Subset from the total dataset those observables:
 
     my_dataset <- total[, positions]
 
-5. Appropriately labels the data set with descriptive variable names.
+* Appropriately labels the data set with descriptive variable names.
 
 Set names to column variables: take the first 561 names from the 'variables' vector, set by hand the 562th name to "Activity"
 
@@ -64,7 +64,7 @@ Second, replace the number in the Activity column from 'my_dataset' to the corre
     my_dataset$Activity <- activities[my_dataset[,"Activity"],2]
 
 
-6. From this data set, creates a table, independent tidy data set with the average of each variable for each activity and each subject.
+* From this data set, creates a table, independent tidy data set with the average of each variable for each activity and each subject.
 
         setwd("/home/jorda/Escritorio/Curso-CleaningData-Coursera/GetAndCleanData_Project/")
     
